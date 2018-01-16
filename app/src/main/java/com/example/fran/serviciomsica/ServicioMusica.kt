@@ -17,10 +17,17 @@ class ServicioMusica : Service() {
         reproductor = MediaPlayer.create(this, R.raw.audio)
     }
 
+    /*
     override fun onStartCommand(intent: Intent, flags: Int, idArranque: Int): Int {
         Toast.makeText(this, "Servicio arrancado " + idArranque, Toast.LENGTH_SHORT).show()
         reproductor!!.start()
         return START_STICKY
+    }
+    */
+
+    public override fun onStart(intent: Intent, startId: Int) {
+        Toast.makeText(this, "Servicio arrancado " + startId, Toast.LENGTH_SHORT).show()
+        reproductor!!.start()
     }
 
     override fun onDestroy() {
